@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button type="button" @click="showDialog = true">ダイアログを表示</button>
+    <sample-dialog v-if="showDialog" @close="showDialog = false" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SampleDialog from './components/SampleDialog.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    SampleDialog
+  },
+  data () {
+    return {
+      showDialog: false
+    }
   }
 }
 </script>
